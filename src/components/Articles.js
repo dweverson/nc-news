@@ -18,7 +18,7 @@ useEffect(() => {
 
     return (
 
-<div>
+<div className='articles'>
     <ArticleCard articles={articles} />
 </div>
 
