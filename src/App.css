@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+.articleCard {
+
+  border: 2px solid red;
+
+}
+
+.header {
+  border: 2px solid blue;
+
+}
+
+.nav {
+  border: 2px solid black;
+
+}
