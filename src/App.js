@@ -3,6 +3,7 @@ import { Nav } from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import { Articles } from './components/Articles';
+import { SingleArt } from './components/SingleArt';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <Nav />
       <Routes>
         <Route path='/articles' element={<Articles />} />
+        <Route path='/articles/:article_id' element={<SingleArt />} />
       </Routes>
     </div>
     </BrowserRouter>
