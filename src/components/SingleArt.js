@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 import { getArticleById } from '../utils/api'
-
+import { CommentCard } from "./CommentCard";
 
 export const SingleArt = () => {
 
@@ -23,6 +23,7 @@ return (
         <p>Comment Count: {singleArticle.comment_count}</p>
         <p>Votes: {singleArticle.votes}</p>
         <p>Body: {singleArticle.body}</p>
+        <CommentCard article_id={article_id}/>
     </div>
     )
 }
