@@ -19,10 +19,8 @@ useEffect (() => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(loggedInUser.username, 'LOGGED USER COMMENT CARD')
-    console.log(commentInput, 'COMM INPUT')
-    // const commentObj = {commentInput, loggedInUser}
     postComment(props.article_id, commentInput, loggedInUser.username)
+    
 }
 
     return (
