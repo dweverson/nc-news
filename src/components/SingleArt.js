@@ -15,8 +15,6 @@ useEffect (() => {
     })
 }, [])
 
-console.log(singleArticle.votes, '<<< SINGEL ART VOTES')
-
 return (
     <div className='singleArt'>
         <h2>Title: {singleArticle.title}</h2>

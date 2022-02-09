@@ -6,9 +6,6 @@ export const Votes = ({article_id, votes}) => {
     const [voteChange, setVoteChange] = useState(0);
     const [displayedVotes, setDisplayedVotes] = useState(votes)
 
-    console.log(votes, 'votes props arg')
-    console.log(article_id, 'art id props arg')
-
     useEffect(() => {
         setDisplayedVotes(votes)
     }, [votes])
@@ -21,7 +18,6 @@ export const Votes = ({article_id, votes}) => {
         })
     }
 
-    console.log(displayedVotes, 'DIS VOTES')
     return (
         <>
         <button onClick={() => giveVote(1)}>upvote </button>
