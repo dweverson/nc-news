@@ -1,9 +1,12 @@
 import { Header } from './components/Header'
 import { Nav } from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Articles } from './components/Articles';
 import { SingleArt } from './components/SingleArt';
+
+
 
 function App() {
   return (
@@ -12,8 +15,10 @@ function App() {
     <Header />
     <Nav />
       <Routes>
-        <Route path='/articles' element={<Articles />} />
+        <Route path='/' element={<Articles />} />
+        
         <Route path='/articles/:article_id' element={<SingleArt />} />
+        <Route path='/articles/topic/:topic' element={<Articles />} />
       </Routes>
     </div>
     </BrowserRouter>

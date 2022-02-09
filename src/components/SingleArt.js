@@ -15,7 +15,7 @@ useEffect (() => {
 }, [])
 
 return (
-    <div>
+    <div className='singleArt'>
         <h2>Title: {singleArticle.title}</h2>
         <h3>By User: {singleArticle.author}</h3>
         <p>Topic: {singleArticle.topic}</p>

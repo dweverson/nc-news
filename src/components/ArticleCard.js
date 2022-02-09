@@ -13,8 +13,8 @@ export const ArticleCard = (props) => {
                             <p>Comment Count: {article.comment_count}</p>
                             <p>Votes: {article.votes}</p>
                         </li>
-                    );
-                })};
+                    )
+                })}
             </ul>
     );
 };

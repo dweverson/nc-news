@@ -4,15 +4,23 @@ const ncNewsApi = axios.create({
     baseURL: 'https://dans-nc-news-project.herokuapp.com/api'
 });
 
-export const getArticles = () => {
-    return ncNewsApi.get('/articles').then(({ data }) => {
+export const getArticles = (topic_slug) => {
+    return ncNewsApi.get('/articles', { params: {topic: topic_slug}})
+    .then(({ data }) => {
+        console.log(topic_slug, 'API TOPIC')
         return data.articles
     });
 };
 
 export const getArticleById = (article_id) => {
     return ncNewsApi.get(`/articles/${article_id}`).then(({ data }) => {
-        console.log(data, 'ART DATA API')
         return data.article
     })
+}
+
+export const getTopics = () => {
+return ncNewsApi.get('/topics').then(({ data }) => {
+    return data.topics
+})
+
 }
