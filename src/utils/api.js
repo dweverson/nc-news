@@ -41,8 +41,12 @@ export const patchVotes = (article_id, inc_votes) => {
 }
 
 export const postComment = (article_id, username, body) => {
-    return ncNewsApi.post(`/articles/${article_id}/comments`, { username: username, body: body })
+    console.log(typeof username, 'USERNAME API')
+        console.log(typeof body, 'BODY API')
+        console.log(typeof article_id, ' ART ID API')
+    return ncNewsApi.post(`/articles/${article_id}/comments`, { username: 'jessjelly', body: 'test comment' })
     .then (({ data }) => {
+        console.log(data.comment)
         return data.comment
     })
 }

@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getComments } from '../utils/api';
 import { postComment } from "../utils/api";
-
+import { useContext } from "react";
+import { UserContext } from "../contexts/User";
 
 
 export const CommentCard = (props) => {
 
+const { loggedInUser } = useContext(UserContext);
 const [comments, setComments] = useState([]);
 const [commentInput, setCommentInput] = useState('')
 
@@ -17,10 +19,11 @@ useEffect (() => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-    const commentObj = {commentInput}
-    postComment(commentObj)
+    console.log(loggedInUser.username, 'LOGGED USER COMMENT CARD')
+    console.log(commentInput, 'COMM INPUT')
+    // const commentObj = {commentInput, loggedInUser}
+    postComment(props.article_id, commentInput, loggedInUser.username)
 }
-
 
     return (
 
@@ -39,11 +42,8 @@ const handleSubmit = (event) => {
 
             </input>
         </label>
+        <button type='submit'>Submit</button>
     </form>
-
-
-
-
             <ul> 
                 {comments.map((comment) => {
                     return (
