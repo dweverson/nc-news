@@ -33,9 +33,10 @@ export const getComments = (article_id) => {
     })
 }
 
-export const patchVotes = (article_id) => {
-    return ncNewsApi.patch(`/articles/${article_id}`, { inc_votes: 1 })
+export const patchVotes = (article_id, inc_votes) => {
+    return ncNewsApi.patch(`/articles/${article_id}`, { inc_votes: inc_votes })
     .then (({ data }) => {
+        console.log(inc_votes, 'API VOTE INC')
         return data.article
     })
 }
