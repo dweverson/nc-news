@@ -7,24 +7,16 @@ export const Articles = () => {
 
 const [articles, setArticles] = useState([]);
 const { topic } = useParams();
-console.log(topic, 'ART TOPIC?')
-
 
 useEffect(() => {
     getArticles(topic).then((articlesFromApi) => {
         setArticles(articlesFromApi);
-        
-    })
-
+        })
 }, [topic]);
-
-
-
-    return (
-
-<div className='articles'>
-    <ArticleCard articles={articles} />
-</div>
-
-    )
+    
+return  (
+        <div className='articles'>
+            <ArticleCard articles={articles} />
+        </div>
+        )
 }

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom'
 import { getComments } from '../utils/api';
+import { postComment } from "../utils/api";
 
 
 
 export const CommentCard = (props) => {
 
 const [comments, setComments] = useState([]);
+const [commentInput, setCommentInput] = useState('')
 
 useEffect (() => {
     getComments(props.article_id).then((commentsFromApi) => {
@@ -14,7 +15,35 @@ useEffect (() => {
     })
 }, [])
 
+const handleSubmit = (event) => {
+    event.preventDefault();
+    const commentObj = {commentInput}
+    postComment(commentObj)
+}
+
+
     return (
+
+<div>
+    <p>Post a comment!</p>
+    <form onSubmit={handleSubmit}>
+        <label>
+            Comment input
+            <input
+                value={commentInput}
+                id='comment input'
+                placeholder='comment input'
+                type='text'
+                required
+                onChange={(e) => setCommentInput(e.target.value)}>
+
+            </input>
+        </label>
+    </form>
+
+
+
+
             <ul> 
                 {comments.map((comment) => {
                     return (
@@ -27,5 +56,6 @@ useEffect (() => {
                     )
                 })}
             </ul>
+        </div>
     );
 };

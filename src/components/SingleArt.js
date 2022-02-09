@@ -24,6 +24,7 @@ return (
         <p>Comment Count: {singleArticle.comment_count}</p>
         <p>Body: {singleArticle.body}</p>
         <Votes article_id={article_id} votes={singleArticle.votes}/>
+        {/* <PostComment article_id={article_id} /> */}
         <CommentCard article_id={article_id} />
     </div>
     )
