@@ -45,3 +45,8 @@ export const postComment = (article_id, body, username) => {
         return data.comment
     })
 }
+
+export const deleteComment = (comment_id) => {
+    return ncNewsApi.delete(`/comments/${comment_id}`)
+
+}

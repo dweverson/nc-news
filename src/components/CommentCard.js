@@ -63,6 +63,7 @@ const handleSubmit = (event) => {
                             <p>Created At: {comment.created_at}</p>
                             <p>Votes: {comment.votes}</p>
                             <p>Body: {comment.body}</p>
+                            {loggedInUser.username === comment.author ? <button>Delete</button> : 'nope'  }
                         </li>
                     )
                 })}
