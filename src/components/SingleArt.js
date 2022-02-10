@@ -14,7 +14,6 @@ useEffect (() => {
         setSingleArticle(articleFromApi)
     })
 }, [])
-console.log(singleArticle.comment_count, 'SINGLE ART')
 return (
     <div className='singleArt'>
         <h2>Title: {singleArticle.title}</h2>

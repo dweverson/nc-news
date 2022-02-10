@@ -6,7 +6,6 @@ import { UserContext } from "../contexts/User";
 
 
 export const CommentCard = (props) => {
-// console.log(props, ' PROPS')
 const { loggedInUser } = useContext(UserContext);
 const [comments, setComments] = useState([]);
 const [commentInput, setCommentInput] = useState('')
@@ -36,8 +35,6 @@ const handleSubmit = (event) => {
     .catch((err) => { setCommentCount((currCount) => currCount - 1) })
     
 }
-// console.log(newComment, 'NEW COMMENT STATE')
-console.log(comments, 'COMMENTS')
     return (
 
 <div>

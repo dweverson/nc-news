@@ -4,8 +4,8 @@ const ncNewsApi = axios.create({
     baseURL: 'https://dans-nc-news-project.herokuapp.com/api'
 });
 
-export const getArticles = (topic_slug) => {
-    return ncNewsApi.get('/articles', { params: {topic: topic_slug}})
+export const getArticles = (topic_slug, sortBy, sortAscDesc) => {
+    return ncNewsApi.get('/articles', { params: {topic: topic_slug, sort_by: sortBy, order: sortAscDesc}})
     .then(({ data }) => {
         return data.articles
     });

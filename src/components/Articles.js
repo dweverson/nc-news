@@ -3,16 +3,15 @@ import { useEffect, useState } from "react"
 import { getArticles } from "../utils/api"
 import { useParams } from 'react-router-dom';
 
-export const Articles = () => {
-
+export const Articles = (props) => {
 const [articles, setArticles] = useState([]);
 const { topic } = useParams();
 
 useEffect(() => {
-    getArticles(topic).then((articlesFromApi) => {
+    getArticles(topic, props.sortBy, props.sortAscDesc ).then((articlesFromApi) => {
         setArticles(articlesFromApi);
         })
-}, [topic]);
+}, [topic, props.sortBy]);
     
 return  (
         <div className='articles'>
