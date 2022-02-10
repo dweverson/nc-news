@@ -12,8 +12,6 @@ function App() {
   const [sortBy, setSortBy] = useState()
   const [sortAscDesc, setSortAscDesc] = useState()
 
-
-  console.log(sortAscDesc, 'APP SORTDESC')
   return (
     <BrowserRouter>
     <div className="App">

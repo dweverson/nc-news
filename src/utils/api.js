@@ -5,7 +5,7 @@ const ncNewsApi = axios.create({
 });
 
 export const getArticles = (topic_slug, sortBy, sortAscDesc) => {
-    return ncNewsApi.get('/articles', { params: {topic: topic_slug, sort_by: sortBy, order: sortAscDesc}})
+    return ncNewsApi.get('/articles', { params: {topic: topic_slug, sort_by: sortBy, order_by: sortAscDesc}})
     .then(({ data }) => {
         return data.articles
     });

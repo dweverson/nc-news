@@ -57,15 +57,22 @@ return (
     </Dropdown.Toggle>
 
     <Dropdown.Menu variant="dark">
-        
+                <Dropdown.Item onClick={() => handleSortBy('created_at')} key='created_at' as={Link} to={`/articles/topic/${currentTopic}`} active>
+                    Created at (default)              
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => handleSortBy('comment_count')} key='comment_count' as={Link} to={`/articles/topic/${currentTopic}`} active>
+                    Comment Count               
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => handleSortBy('votes')} key='votes' as={Link} to={`/articles/topic/${currentTopic}`} active>
+                    Votes               
+                </Dropdown.Item>
                 <Dropdown.Item onClick={() => handleSortBy('title')} key='title' as={Link} to={`/articles/topic/${currentTopic}`} active>
                     Title               
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => handleSortBy('author')} key='author' as={Link} to={`/articles/topic/${currentTopic}`} active>
                     Author               
-                </Dropdown.Item><Dropdown.Item onClick={() => handleSortBy('created_at')} key='created_at' as={Link} to={`/articles/topic/${currentTopic}`} active>
-                    Created_at               
                 </Dropdown.Item>
+                
     </Dropdown.Menu>
   </Dropdown>
 
@@ -76,12 +83,13 @@ return (
       Asc/Desc
     </Dropdown.Toggle>
          <Dropdown.Menu variant="dark">
+         <Dropdown.Item onClick={() => handleAsc('desc')} key='descending' as={Link} to={`/articles/topic/${currentTopic}`} active>
+                    Descending (default)               
+                </Dropdown.Item>
                  <Dropdown.Item onClick={() => handleAsc('asc')} key='ascending' as={Link} to={`/articles/topic/${currentTopic}`} active>
                     Ascending               
                 </Dropdown.Item>
-                <Dropdown.Item onClick={() => handleAsc('desc')} key='descending' as={Link} to={`/articles/topic/${currentTopic}`} active>
-                    Descending               
-                </Dropdown.Item>
+
     </Dropdown.Menu>
   </Dropdown> 
 </nav>

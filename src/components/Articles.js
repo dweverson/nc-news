@@ -11,7 +11,7 @@ useEffect(() => {
     getArticles(topic, props.sortBy, props.sortAscDesc ).then((articlesFromApi) => {
         setArticles(articlesFromApi);
         })
-}, [topic, props.sortBy]);
+}, [topic, props.sortBy, props.sortAscDesc]);
     
 return  (
         <div className='articles'>
