@@ -19,11 +19,11 @@ export const Votes = ({article_id, votes}) => {
     }
 
     return (
-        <>
+        <div className='vote-ui'>
         <button onClick={() => giveVote(1)}>upvote </button>
         <p>{displayedVotes}</p>
         <button onClick={() => giveVote(-1)}>downvote </button>
-        </>
+        </div>
     )
 }
 

@@ -14,17 +14,17 @@ useEffect (() => {
         setSingleArticle(articleFromApi)
     })
 }, [])
-
+console.log(singleArticle.comment_count, 'SINGLE ART')
 return (
     <div className='singleArt'>
         <h2>Title: {singleArticle.title}</h2>
         <h3>By User: {singleArticle.author}</h3>
         <p>Topic: {singleArticle.topic}</p>
         <p>Created At: {singleArticle.created_at}</p>
-        <p>Comment Count: {singleArticle.comment_count}</p>
+        {/* <p>Comment Count: {singleArticle.comment_count}</p> */}
         <p>Body: {singleArticle.body}</p>
         <Votes article_id={article_id} votes={singleArticle.votes}/>
-        <CommentCard article_id={article_id} />
+        <CommentCard article_id={article_id} commentCount={singleArticle.comment_count}/>
     </div>
     )
 }

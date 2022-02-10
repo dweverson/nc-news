@@ -16,9 +16,9 @@ export const Nav = () => {
 return (
 
 <nav className='nav'>
-<Dropdown>
+<Dropdown className='topic-dropdown'>
     <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-      Dropdown Button
+      Topics
     </Dropdown.Toggle>
 
     <Dropdown.Menu variant="dark">

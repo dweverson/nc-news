@@ -6,26 +6,42 @@ import { UserContext } from "../contexts/User";
 
 
 export const CommentCard = (props) => {
-
+// console.log(props, ' PROPS')
 const { loggedInUser } = useContext(UserContext);
 const [comments, setComments] = useState([]);
 const [commentInput, setCommentInput] = useState('')
+const [commentCount, setCommentCount] = useState('guitar')
+const [commentLength, setCommentLength] = useState(0)
+
+useEffect (() => {
+    setCommentCount(props.commentCount)
+    getComments(props.article_id).then((commentsFromApi) => {
+        setComments(commentsFromApi)
+        setCommentLength(commentsFromApi.length)
+    })
+}, [])
 
 useEffect (() => {
     getComments(props.article_id).then((commentsFromApi) => {
         setComments(commentsFromApi)
+        setCommentLength(commentsFromApi.length)
     })
-}, [])
+}, [commentLength])
+
 
 const handleSubmit = (event) => {
     event.preventDefault();
+    setCommentLength((currCount) => currCount + 1)
     postComment(props.article_id, commentInput, loggedInUser.username)
+    .catch((err) => { setCommentCount((currCount) => currCount - 1) })
     
 }
-
+// console.log(newComment, 'NEW COMMENT STATE')
+console.log(comments, 'COMMENTS')
     return (
 
 <div>
+    <p>Comment Count: {comments.length}</p>
     <p>Post a comment!</p>
     <form onSubmit={handleSubmit}>
         <label>
