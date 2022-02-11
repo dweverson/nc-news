@@ -1,4 +1,5 @@
 import axios from 'axios';
+const dayjs = require('dayjs')
 
 const ncNewsApi = axios.create({
     baseURL: 'https://dans-nc-news-project.herokuapp.com/api'
@@ -48,5 +49,14 @@ export const postComment = (article_id, body, username) => {
 
 export const deleteComment = (comment_id) => {
     return ncNewsApi.delete(`/comments/${comment_id}`)
-
+    .then ((res) => {
+        console.log('comment deleted api yo')
+        return 'comment deleted'
+    }) 
 }
+
+export const formatDate = (input) => {
+    if (input) {
+      return dayjs(input).$d.toString().substring(4, 15);
+    }
+  };

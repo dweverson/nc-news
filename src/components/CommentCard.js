@@ -3,6 +3,8 @@ import { getComments } from '../utils/api';
 import { postComment } from "../utils/api";
 import { useContext } from "react";
 import { UserContext } from "../contexts/User";
+import { deleteComment } from '../utils/api';
+import { formatDate } from '../utils/api';
 
 
 export const CommentCard = (props) => {
@@ -33,7 +35,11 @@ const handleSubmit = (event) => {
     setCommentLength((currCount) => currCount + 1)
     postComment(props.article_id, commentInput, loggedInUser.username)
     .catch((err) => { setCommentCount((currCount) => currCount - 1) })
-    
+    }
+
+const handleClick = (comment_id) => {
+    deleteComment(comment_id)
+    setCommentLength((currCount) => currCount - 1)
 }
     return (
 
@@ -60,10 +66,10 @@ const handleSubmit = (event) => {
                     return (
                         <li key={comment.comment_id} className='articleCard'>
                             <h3>By User: {comment.author}</h3>
-                            <p>Created At: {comment.created_at}</p>
+                            <p>Created At: {formatDate(comment.created_at)}</p>
                             <p>Votes: {comment.votes}</p>
                             <p>Body: {comment.body}</p>
-                            {loggedInUser.username === comment.author ? <button>Delete</button> : 'nope'  }
+                            {loggedInUser.username === comment.author ? <button onClick={() => handleClick(comment.comment_id)}>Delete</button> : 'nope'  }
                         </li>
                     )
                 })}

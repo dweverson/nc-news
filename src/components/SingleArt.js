@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from '../utils/api'
 import { CommentCard } from "./CommentCard";
 import { Votes } from './Votes'
+import { formatDate } from "../utils/api";
 
 export const SingleArt = () => {
 
@@ -19,7 +20,7 @@ return (
         <h2>Title: {singleArticle.title}</h2>
         <h3>By User: {singleArticle.author}</h3>
         <p>Topic: {singleArticle.topic}</p>
-        <p>Created At: {singleArticle.created_at}</p>
+        <p>Created At: {formatDate(singleArticle.created_at)}</p>
         {/* <p>Comment Count: {singleArticle.comment_count}</p> */}
         <p>Body: {singleArticle.body}</p>
         <Votes article_id={article_id} votes={singleArticle.votes}/>

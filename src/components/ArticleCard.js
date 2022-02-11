@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { formatDate } from '../utils/api';
 
 export const ArticleCard = (props) => {
     return (
@@ -9,7 +10,7 @@ export const ArticleCard = (props) => {
                            <Link to={`/articles/${article.article_id}`}><h2>Title: {article.title}</h2></Link>
                             <h3>By User: {article.author}</h3>
                             <p>Topic: {article.topic}</p>
-                            <p>Created At: {article.created_at}</p>
+                            <p>Created At: {formatDate(article.created_at)}</p>
                             <p>Comment Count: {article.comment_count}</p>
                             <p>Votes: {article.votes}</p>
                         </li>
