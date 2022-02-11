@@ -16,13 +16,12 @@ useEffect (() => {
     })
 }, [])
 return (
-    <div className='singleArt'>
-        <h2>Title: {singleArticle.title}</h2>
-        <h3>By User: {singleArticle.author}</h3>
-        <p>Topic: {singleArticle.topic}</p>
-        <p>Created At: {formatDate(singleArticle.created_at)}</p>
-        {/* <p>Comment Count: {singleArticle.comment_count}</p> */}
-        <p>Body: {singleArticle.body}</p>
+    <div className='container'>
+        <h2><strong>Title:</strong> {singleArticle.title}</h2>
+        <h3><strong>By User:</strong>{singleArticle.author}</h3>
+        <p><strong>Topic:</strong> {singleArticle.topic}</p>
+        <p><strong>Created At:</strong> {formatDate(singleArticle.created_at)}</p>
+        <p><strong>Article:</strong> {singleArticle.body}</p>
         <Votes article_id={article_id} votes={singleArticle.votes}/>
         <CommentCard article_id={article_id} commentCount={singleArticle.comment_count}/>
     </div>

@@ -14,7 +14,7 @@ useEffect(() => {
 }, [topic, props.sortBy, props.sortAscDesc]);
     
 return  (
-        <div className='articles'>
+        <div className='container'>
             <ArticleCard articles={articles} />
         </div>
         )

@@ -59,7 +59,7 @@ const handleClick = (comment_id) => {
 
             </input>
         </label>
-        <button type='submit'>Submit</button>
+        <button className='btn' type='submit'>Submit</button>
     </form>
             <ul> 
                 {comments.map((comment) => {
@@ -69,7 +69,7 @@ const handleClick = (comment_id) => {
                             <p>Created At: {formatDate(comment.created_at)}</p>
                             <p>Votes: {comment.votes}</p>
                             <p>Body: {comment.body}</p>
-                            {loggedInUser.username === comment.author ? <button onClick={() => handleClick(comment.comment_id)}>Delete</button> : 'nope'  }
+                            {loggedInUser.username === comment.author ? <button className='btn' onClick={() => handleClick(comment.comment_id)}>Delete</button> : null  }
                         </li>
                     )
                 })}

@@ -14,9 +14,8 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
+    <div className='App'>
     <Header />
-    
     <Nav setSortBy={setSortBy} setSortAscDesc={setSortAscDesc}/>
       <Routes>
         <Route path='/' element={<Articles sortBy={sortBy} sortAscDesc={sortAscDesc}/>} />
@@ -26,7 +25,7 @@ function App() {
         <Route path='/articles/topic/:topic' element={<Articles sortBy={sortBy} sortAscDesc={sortAscDesc}/>} />
 
       </Routes>
-    </div>
+      </div >
     </BrowserRouter>
   );
 }

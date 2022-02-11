@@ -5,9 +5,9 @@ export const UserProfile = () => {
     const { loggedInUser } = useContext(UserContext);
 
     return (
-        <div> 
-            <p>Logged in as:</p>
-            <h3>{loggedInUser.username}</h3>
+        <div className='header__grid1'> 
+            <p>Logged in as: <strong>{loggedInUser.username}</strong></p>
+            
         </div>
     )
 }

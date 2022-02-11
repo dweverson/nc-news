@@ -29,7 +29,7 @@ export const Nav = (props) => {
 return (
 
 <nav className='nav'>
-<Dropdown className='topic-dropdown'>
+<Dropdown className='topic-dropdown dropdown'>
     <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
       Topics
     </Dropdown.Toggle>

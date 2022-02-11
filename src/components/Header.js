@@ -4,8 +4,8 @@ import { UserProfile } from './UserProfile'
 
 export const Header = () => {
     return (
-        <header className='header'>
-        <Link to={`/`}><h1>NC News</h1></Link>
+        <header >
+        <Link to={`/`}><h1 className='header__grid2'>NC News</h1></Link>
         <UserProfile />
         </header>
     )
