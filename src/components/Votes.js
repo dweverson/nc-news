@@ -1,3 +1,4 @@
+import '../css/Votes.css'
 import { useState, useEffect } from "react";
 import { patchVotes } from "../utils/api";
 
@@ -19,10 +20,16 @@ export const Votes = ({article_id, votes}) => {
     }
 
     return (
-        <div className='vote-ui'>
-        <button className='btn' onClick={() => giveVote(1)}>upvote </button>
+        <div className='votes'>
+            <i 
+             onClick={() => giveVote(1)}
+             class="fa-solid fa-square-caret-up">
+             </i>
         <p>{displayedVotes}</p>
-        <button className='btn' onClick={() => giveVote(-1)}>downvote </button>
+        <i 
+             onClick={() => giveVote(-1)}
+             class="fa-solid fa-square-caret-down">
+             </i>
         </div>
     )
 }

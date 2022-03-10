@@ -44,32 +44,33 @@ const handleClick = (comment_id) => {
     return (
 
 <div>
-    <p>Comment Count: {comments.length}</p>
-    <p>Post a comment!</p>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
+    <div className='form__commentbox'>
         <label>
-            Comment input
             <input
+                className='form__textarea'
                 value={commentInput}
                 id='comment input'
-                placeholder='comment input'
+                placeholder='Post a comment!'
                 type='text'
                 required
                 onChange={(e) => setCommentInput(e.target.value)}>
 
             </input>
         </label>
-        <button className='btn' type='submit'>Submit</button>
+        <button className='btn' type='submit'>Post Comment</button>
+        </div>
     </form>
             <ul> 
                 {comments.map((comment) => {
                     return (
                         <li key={comment.comment_id} className='articleCard'>
-                            <h3>By User: {comment.author}</h3>
-                            <p>Created At: {formatDate(comment.created_at)}</p>
-                            <p>Votes: {comment.votes}</p>
-                            <p>Body: {comment.body}</p>
-                            {loggedInUser.username === comment.author ? <button className='btn' onClick={() => handleClick(comment.comment_id)}>Delete</button> : null  }
+                                                        {loggedInUser.username === comment.author ? <button className='btn' onClick={() => handleClick(comment.comment_id)}>Delete</button> : null  }
+
+                            <h3>User: {comment.author}</h3>
+                            <p>{formatDate(comment.created_at)}</p>
+                            <p>Votes {comment.votes}</p>
+                            <p>{comment.body}</p>
                         </li>
                     )
                 })}
