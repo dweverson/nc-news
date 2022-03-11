@@ -1,8 +1,7 @@
 .article {
   border-radius: 10px;
   box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
-  rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-  margin-top: 5rem;
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   margin-bottom: 0.3em;
   padding: 1.5em;
   background-color: #fff;
@@ -17,7 +16,7 @@
 }
 
 .article__author {
-    color: #B6E2D3;
+  color: #b6e2d3;
   grid-area: author;
   font-size: 0.9em;
   font-weight: 600;
@@ -47,11 +46,11 @@
   margin-top: 1em;
   line-height: 1.2em;
   font-size: 0.8rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .article__commentcount {
-  color: #B6E2D3;
+  color: #b6e2d3;
   grid-area: commentcount;
   font-size: 0.9rem;
   display: flex;
@@ -72,15 +71,9 @@
   grid-area: votes;
 }
 
-@media screen and (min-width: 600px) and (max-width: 799px) {
+@media screen and (min-width: 700px) {
   .article {
-    padding: 0em 0.8em;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  .article {
-    padding: 0em 1em;
+    padding: 1em;
   }
   .article__body {
     margin: 0.5em 0.1em;
@@ -89,6 +82,18 @@
     font-size: 1.1rem;
   }
   .article__topic {
+    font-size: 1.3rem;
+  }
+
+  .article__title {
     font-size: 1.5rem;
+  }
+
+  .article__author {
+    font-size: 1.3rem;
+  }
+
+  .article__datetime {
+    font-size: 1.3rem;
   }
 }

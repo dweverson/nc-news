@@ -1,0 +1,19 @@
+.nav {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 0;
+  background-color: #fae8e0;
+  height: 47px;
+  justify-content: center;
+}
+
+.dropdown-menu {
+  background-color: #b6e2d3;
+}
+
+.dropdown item {
+  background-color: #b6e2d3;
+  color: #fff;
+}

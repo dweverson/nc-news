@@ -1,25 +1,31 @@
 Header {
-    display: grid;
-    grid-template-columns: 200px auto 10px;
-    position: fixed;
-    top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-    background-color: #FAE8E0;
-  }
-  
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #fae8e0;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "logo user";
+}
+
+.header__grid1 {
+  grid-area: user;
+  text-align: right;
+  margin-right: 2em;
+  padding-top: 20px;
+  font-size: 0.75rem;
+}
+
+.header__grid2 {
+  grid-area: logo;
+  margin-left: 1em;
+  padding-top: 13px;
+}
+
+@media screen and (min-width: 700px) {
   .header__grid1 {
-    text-align: right;
-margin-right: 1em;
-    padding-top: 20px;
-    font-size: 0.75rem;
-    
+    font-size: 1rem;
   }
-  
-  .header__grid2 {
-    text-align: left;
-    margin-left: 1em;
-    padding-top: 13px;
-    
-  }
+}

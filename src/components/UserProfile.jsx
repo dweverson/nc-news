@@ -6,8 +6,7 @@ export const UserProfile = () => {
 
     return (
         <div className='header__grid1'> 
-            <p>User <strong>{loggedInUser.username}</strong></p>
-            
+            <p>u/ <strong>{loggedInUser.username}</strong></p>
         </div>
     )
 }

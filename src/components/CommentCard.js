@@ -1,3 +1,4 @@
+import '../css/CommentCard.css'
 import { useEffect, useState } from 'react';
 import { getComments } from '../utils/api';
 import { postComment } from "../utils/api";
@@ -42,35 +43,36 @@ const handleClick = (comment_id) => {
     setCommentLength((currCount) => currCount - 1)
 }
     return (
-
 <div>
     <form onSubmit={handleSubmit} className='form'>
     <div className='form__commentbox'>
         <label>
-            <input
+            <textarea
                 className='form__textarea'
                 value={commentInput}
                 id='comment input'
-                placeholder='Post a comment!'
+                placeholder='Have your say...'
                 type='text'
                 required
                 onChange={(e) => setCommentInput(e.target.value)}>
-
-            </input>
+            </textarea>
         </label>
-        <button className='btn' type='submit'>Post Comment</button>
+        </div>
+        <div className='form__submit'>
+        <button className='btn form__button' type='submit'>Post Comment</button>
         </div>
     </form>
             <ul> 
                 {comments.map((comment) => {
                     return (
-                        <li key={comment.comment_id} className='articleCard'>
-                                                        {loggedInUser.username === comment.author ? <button className='btn' onClick={() => handleClick(comment.comment_id)}>Delete</button> : null  }
-
-                            <h3>User: {comment.author}</h3>
-                            <p>{formatDate(comment.created_at)}</p>
-                            <p>Votes {comment.votes}</p>
-                            <p>{comment.body}</p>
+                        <li key={comment.comment_id} className='comment'>
+                            <div className='comment__delete'>
+                        {loggedInUser.username === comment.author ? <button  className='btn' onClick={() => handleClick(comment.comment_id)}>Delete</button> : null  }
+                        </div>
+                            <h3 className='comment__author'>u/ {comment.author}</h3>
+                            <p className='comment__datetime'>{formatDate(comment.created_at)}</p>
+                            <p className='comment__votes'>{comment.votes} votes</p>
+                            <p className='comment__body'>{comment.body}</p>
                         </li>
                     )
                 })}

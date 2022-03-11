@@ -14,16 +14,14 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className='App'>
+    <div className='app'>
     <Header />
     <Nav setSortBy={setSortBy} setSortAscDesc={setSortAscDesc}/>
       <Routes>
         <Route path='/' element={<Articles sortBy={sortBy} sortAscDesc={sortAscDesc}/>} />
-        
         <Route path='/articles/:article_id' element={<SingleArt  />} />
         <Route path='/articles/topic/' element={<Articles sortBy={sortBy} sortAscDesc={sortAscDesc}/>} />
         <Route path='/articles/topic/:topic' element={<Articles sortBy={sortBy} sortAscDesc={sortAscDesc}/>} />
-
       </Routes>
       </div >
     </BrowserRouter>

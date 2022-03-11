@@ -1,4 +1,4 @@
-import '../css/Article.css'
+import '../css/SingleArticle.css'
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom";
 import { getArticleById } from '../utils/api'
