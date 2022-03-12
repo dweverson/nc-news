@@ -15,7 +15,8 @@ useEffect (() => {
     getArticleById(article_id).then((articleFromApi) => {
         setSingleArticle(articleFromApi)
     })
-}, [])
+}, [article_id])
+
 return (
     <div className='container'>
         <div className='article'>
@@ -28,7 +29,7 @@ return (
             <Votes className='article__votes' article_id={article_id} votes={singleArticle.votes}/>
             </div>
         <div>
-        <CommentCard article_id={article_id} commentCount={singleArticle.comment_count}/>
+        <CommentCard article_id={article_id} />
         </div>
     </div>
     )

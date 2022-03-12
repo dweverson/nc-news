@@ -12,30 +12,29 @@ export const CommentCard = (props) => {
 const { loggedInUser } = useContext(UserContext);
 const [comments, setComments] = useState([]);
 const [commentInput, setCommentInput] = useState('')
-const [commentCount, setCommentCount] = useState('guitar')
 const [commentLength, setCommentLength] = useState(0)
 
 useEffect (() => {
-    setCommentCount(props.commentCount)
     getComments(props.article_id).then((commentsFromApi) => {
         setComments(commentsFromApi)
         setCommentLength(commentsFromApi.length)
     })
-}, [])
+}, [props.article_id])
 
 useEffect (() => {
     getComments(props.article_id).then((commentsFromApi) => {
         setComments(commentsFromApi)
         setCommentLength(commentsFromApi.length)
     })
-}, [commentLength])
+}, [commentLength, props.article_id])
 
 
 const handleSubmit = (event) => {
     event.preventDefault();
     setCommentLength((currCount) => currCount + 1)
     postComment(props.article_id, commentInput, loggedInUser.username)
-    .catch((err) => { setCommentCount((currCount) => currCount - 1) })
+    .catch((err) => { setCommentLength((currCount) => currCount - 1) })
+    setCommentInput('')
     }
 
 const handleClick = (comment_id) => {

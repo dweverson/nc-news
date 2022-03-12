@@ -50,7 +50,6 @@ export const postComment = (article_id, body, username) => {
 export const deleteComment = (comment_id) => {
     return ncNewsApi.delete(`/comments/${comment_id}`)
     .then ((res) => {
-        console.log('comment deleted api yo')
         return 'comment deleted'
     }) 
 }
