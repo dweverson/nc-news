@@ -11,9 +11,12 @@
 
 .dropdown-menu {
   background-color: #b6e2d3;
+  color: #fff;
+  
 }
 
-.dropdown item {
+a.dropdown-item {
   background-color: #b6e2d3;
   color: #fff;
+  font-weight: 500;
 }
